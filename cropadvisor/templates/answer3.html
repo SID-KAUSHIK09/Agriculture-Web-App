@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}
+    <title>Disease</title>
+{% endblock title %}
+{% block body %}
+<div class="container mx-auto" style="width:400px;">
+<h1 class="text-white">Disease summary</h1>
+    <br>
+    {% if diagnosis.is_healthy %}
+    <p class="text-white">No disease detected. The plant looks healthy.</p>
+    {% else %}
+    <p class="text-white"><b>Name of disease:</b> {{ diagnosis.name }}</p>
+    <p class="text-white"><b>Probability:</b> {{ diagnosis.probability }}%</p>
+    <p class="text-white"><b>Description of disease:</b> {{ diagnosis.description }}</p>
+    <p class="text-white"><b>Prevention:</b>
+      {% if diagnosis.prevention is string %}{{ diagnosis.prevention }}{% else %}{{ (diagnosis.prevention or []) | join(' ') }}{% endif %}</p>
+    {% endif %}
+</div>
+{% endblock body %}

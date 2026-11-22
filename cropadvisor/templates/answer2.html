@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}
+    <title>Weather in your area</title>
+{% endblock title %}
+{% block body %}
+<br><br><br>
+<div class="container mx-auto" style="width :500px">
+    <h5 class="text-white">Location: {{ weather.location }}</h5>
+    <h5 class="text-white">Weather Description: {{ weather.description }}</h5>
+    <h5 class="text-white">Temperature: {{ weather.temperature_c }} &deg;C</h5>
+    <h5 class="text-white">Humidity: {{ weather.humidity }} %</h5>
+    {% if weather.visibility_m is not none %}<h5 class="text-white">Visibility: {{ weather.visibility_m }} metres</h5>{% endif %}
+    <h5 class="text-white">Clouds: {{ weather.clouds_pct }} %</h5>
+    <h5 class="text-white">Wind speed: {{ weather.wind_speed_ms }} m/s</h5>
+    <h5 class="text-white">Atmospheric Pressure: {{ weather.pressure_hpa }} hPa</h5>
+    <br>
+    <a class="btn btn-dark" href="/predict">Use this to get a crop recommendation</a>
+    
+
+</div>
+{% endblock body %}

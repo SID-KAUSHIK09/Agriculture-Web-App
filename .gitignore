@@ -1,0 +1,21 @@
+# Secrets
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Trained model (rebuilt with `python -m cropadvisor.ml.train`); metrics are kept
+models/*.joblib
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store

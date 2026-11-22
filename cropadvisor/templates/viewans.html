@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}
+    <title>View ans</title>
+{% endblock title %}
+{% block body %}
+<br>
+<div class="container" style="max-width:700px;">
+<h3 class="text-white">{{ discussion.Query }}</h3>
+<p class="text-white"><i>Asked by {{ discussion.Farmer_name }}</i></p>
+{% for answer in discussion.answers %}
+    <p class="text-white">{{ answer }}</p>
+{% else %}
+    <p class="text-white">No answers yet.</p>
+{% endfor %}
+<a class="btn btn-dark" href="/ans/{{ discussion.Sno }}">Add an answer</a>
+</div>
+    
+{% endblock body %}

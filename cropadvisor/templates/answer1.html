@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}
+    <title>Answer</title>
+  {% endblock title %}
+{% block body %}
+<br><br>
+{% if crop %}
+<h2 align="center" class="text-white">{{ crop }} - {{ info_type }}</h2>
+<br>
+{% for answer in answers %}
+<p align="center" class="text-white">{{ answer }}</p>
+{% else %}
+<p align="center" class="text-white">No information has been added for this yet.</p>
+{% endfor %}
+{% endif %}
+
+{% endblock body %}

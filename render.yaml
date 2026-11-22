@@ -1,0 +1,14 @@
+# Render Blueprint: https://render.com/docs/blueprint-spec
+services:
+  - type: web
+    name: crop-advisory-platform
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: OPENWEATHER_API_KEY
+        sync: false
+      - key: PLANT_ID_API_KEY
+        sync: false
+      - key: SECRET_KEY
+        generateValue: true
